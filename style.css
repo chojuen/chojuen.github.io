@@ -1,0 +1,188 @@
+/* ======================================================= */
+/* 1. 基本リセットとPC/スマホ共通のベーススタイル */
+/* ======================================================= */
+body {
+    font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; /* 見やすい日本語フォントを設定 */
+    color: #333; /* 文字色を濃いグレーに */
+    margin: 0;
+    padding: 0;
+    background-color: #fff; /* 背景は白でクリーンに */
+}
+
+/* リンクの下線を削除 */
+a {
+    text-decoration: none;
+    color: inherit; /* リンクの色を親要素から継承 */
+}
+
+ul {
+    list-style: none; /* リストの黒点を削除 */
+    padding: 0;
+    margin: 0;
+}
+
+/* 共通のインナー幅 (コンテンツの横幅の最大値) */
+.header-inner, .main-content {
+    max-width: 1100px;
+    margin: 0 auto; /* 中央寄せ */
+    padding: 0 20px;
+}
+
+/* ======================================================= */
+/* 2. ヘッダー (PC表示) */
+/* ======================================================= */
+.header {
+    background-color: #fff;
+    border-bottom: 1px solid #eee; /* 境界線でクリーンな印象に */
+    padding: 15px 0;
+}
+
+.header-inner {
+    display: flex; /* ロゴとメニューを横並びにする */
+    justify-content: space-between; /* 両端に配置 */
+    align-items: center; /* 垂直方向の中央に揃える */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2e8b57; /* 観葉植物らしいグリーンをロゴ色に */
+}
+
+/* メニューの横並び設定 */
+.nav-menu ul {
+    display: flex;
+    gap: 30px; /* メニュー間のスペース */
+}
+
+.nav-menu a {
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #4CAF50; /* ホバーで色を変えて現代的に */
+}
+
+/* お問い合わせボタンの装飾 */
+.contact-btn {
+    background-color: #2e8b57; /* グリーン */
+    color: #fff !important; /* 文字色を白に (ホバーの色変更を上書き) */
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* ======================================================= */
+/* 3. メインコンテンツのベーススタイル */
+/* ======================================================= */
+
+/* ヒーローセクション（メインビジュアル部） */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #f7f7f7; /* 薄いグレーで背景に変化を */
+    margin-bottom: 40px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    color: #2e8b57;
+    margin-bottom: 15px;
+}
+
+.cta-btn {
+    display: inline-block;
+    background-color: #ff9800; /* 目立つオレンジをCTAに */
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #e68900;
+}
+
+/* サービスセクション */
+.section {
+    padding: 40px 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.service-list {
+    display: flex; /* サービス項目を横並びにする */
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.service-item {
+    flex: 1; /* 等しい幅で並べる */
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.service-item h3 {
+    color: #2e8b57;
+}
+
+
+/* ======================================================= */
+/* 4. フッター */
+/* ======================================================= */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+/* ======================================================= */
+/* 5. スマートフォン対応 (メディアクエリ) */
+/* 画面幅が600px以下の時に適用されるスタイル */
+/* ======================================================= */
+@media screen and (max-width: 600px) {
+
+    /* ヘッダーの設定変更 */
+    .header-inner {
+        flex-direction: column; /* ロゴとメニューを縦に積み重ねる */
+        align-items: flex-start; /* 左寄せに戻す */
+    }
+
+    .nav-menu {
+        width: 100%;
+        margin-top: 15px;
+    }
+    
+    .nav-menu ul {
+        flex-direction: column; /* メニュー項目を縦並びにする */
+        gap: 10px; /* 縦並びの隙間 */
+    }
+    
+    /* お問い合わせボタンは幅いっぱいに広げる */
+    .contact-btn {
+        display: block;
+        text-align: center;
+    }
+
+    /* メインコンテンツの調整 */
+    .hero {
+        padding: 60px 20px; /* パディングを減らす */
+    }
+
+    .hero h1 {
+        font-size: 28px; /* 文字サイズを小さくする */
+    }
+
+    /* サービス項目を縦並びにする */
+    .service-list {
+        flex-direction: column;
+    }
+}
