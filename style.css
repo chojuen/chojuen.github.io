@@ -2,29 +2,19 @@
 /* 1. 基本リセットとPC/スマホ共通のベーススタイル */
 /* ======================================================= */
 body {
-    font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; /* 見やすい日本語フォントを設定 */
-    color: #333; /* 文字色を濃いグレーに */
+    font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+    color: #333;
     margin: 0;
     padding: 0;
-    background-color: #fff; /* 背景は白でクリーンに */
+    background-color: #fff;
 }
 
-/* リンクの下線を削除 */
-a {
-    text-decoration: none;
-    color: inherit; /* リンクの色を親要素から継承 */
-}
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; padding: 0; margin: 0; }
 
-ul {
-    list-style: none; /* リストの黒点を削除 */
-    padding: 0;
-    margin: 0;
-}
-
-/* 共通のインナー幅 (コンテンツの横幅の最大値) */
 .header-inner, .main-content {
     max-width: 1100px;
-    margin: 0 auto; /* 中央寄せ */
+    margin: 0 auto;
     padding: 0 20px;
 }
 
@@ -33,26 +23,26 @@ ul {
 /* ======================================================= */
 .header {
     background-color: #fff;
-    border-bottom: 1px solid #eee; /* 境界線でクリーンな印象に */
+    border-bottom: 1px solid #eee;
     padding: 15px 0;
 }
 
 .header-inner {
-    display: flex; /* ロゴとメニューを横並びにする */
-    justify-content: space-between; /* 両端に配置 */
-    align-items: center; /* 垂直方向の中央に揃える */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #2e8b57; /* 観葉植物らしいグリーンをロゴ色に */
+    color: #2e8b57;
 }
 
 /* メニューの横並び設定 */
 .nav-menu ul {
     display: flex;
-    gap: 30px; /* メニュー間のスペース */
+    gap: 30px;
 }
 
 .nav-menu a {
@@ -60,55 +50,36 @@ ul {
     transition: color 0.3s;
 }
 
-.nav-menu a:hover {
-    color: #4CAF50; /* ホバーで色を変えて現代的に */
-}
+.nav-menu a:hover { color: #4CAF50; }
 
-/* お問い合わせボタンの装飾 */
 .contact-btn {
-    background-color: #2e8b57; /* グリーン */
-    color: #fff !important; /* 文字色を白に (ホバーの色変更を上書き) */
+    background-color: #2e8b57;
+    color: #fff !important;
     padding: 8px 15px;
     border-radius: 5px;
     font-weight: bold;
 }
 
-/* PCではチェックボックスと三本線ボタンを隠しておく */
+/* PCではハンバーガー用のボタンとチェックボックスを隠す */
 #menu-btn-check, .menu-btn {
-    display: none;
-}
-
-/* チェックボックス本体を画面から完全に消す */
-#menu-btn-check {
     display: none !important;
 }
 
-/* ハンバーガーの三本線ボタンもPCでは消す */
-.menu-btn {
-    display: none;
-}
-
 /* ======================================================= */
-/* 3. メインコンテンツのベーススタイル */
+/* 3. メインコンテンツとその他 */
 /* ======================================================= */
-
-/* ヒーローセクション（メインビジュアル部） */
 .hero {
     text-align: center;
     padding: 100px 20px;
-    background-color: #f7f7f7; /* 薄いグレーで背景に変化を */
+    background-color: #f7f7f7;
     margin-bottom: 40px;
 }
 
-.hero h1 {
-    font-size: 36px;
-    color: #2e8b57;
-    margin-bottom: 15px;
-}
+.hero h1 { font-size: 36px; color: #2e8b57; margin-bottom: 15px; }
 
 .cta-btn {
     display: inline-block;
-    background-color: #ff9800; /* 目立つオレンジをCTAに */
+    background-color: #ff9800;
     color: #fff;
     padding: 12px 30px;
     border-radius: 30px;
@@ -117,78 +88,32 @@ ul {
     transition: background-color 0.3s;
 }
 
-.cta-btn:hover {
-    background-color: #e68900;
-}
-
-/* サービスセクション */
-.section {
-    padding: 40px 0;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.service-list {
-    display: flex; /* サービス項目を横並びにする */
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.service-item {
-    flex: 1; /* 等しい幅で並べる */
-    padding: 20px;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    text-align: left;
-}
-
-.service-item h3 {
-    color: #2e8b57;
-}
-
+.service-list { display: flex; gap: 20px; margin-top: 30px; }
+.service-item { flex: 1; padding: 20px; border: 1px solid #eee; border-radius: 8px; }
+.footer { text-align: center; padding: 20px 0; background-color: #333; color: #fff; margin-top: 40px; }
 
 /* ======================================================= */
-/* 4. フッター */
-/* ======================================================= */
-.footer {
-    text-align: center;
-    padding: 20px 0;
-    background-color: #333;
-    color: #fff;
-    font-size: 14px;
-    margin-top: 40px;
-}
-
-/* ======================================================= */
-/* 5. スマートフォン対応 (メディアクエリ) */
-/* 画面幅が600px以下の時に適用されるスタイル */
+/* 4. スマートフォン対応 (メディアクエリ) */
 /* ======================================================= */
 @media screen and (max-width: 600px) {
-    /* チェックボックスを隠す */
-    #menu-btn-check {
-        display: none;
-    }
-
-    /* ハンバーガーアイコンの設置 */
+    /* ハンバーガーアイコンを表示 */
     .menu-btn {
+        display: flex !important;
         position: fixed;
         top: 20px;
         right: 20px;
-        display: flex;
         height: 40px;
         width: 40px;
         justify-content: center;
         align-items: center;
-        z-index: 100; /* 一番手前に */
+        z-index: 100;
         background-color: #2e8b57;
         border-radius: 5px;
         cursor: pointer;
     }
 
-    /* 三本線の真ん中の線 */
-    .menu-btn span,
-    .menu-btn span::before,
-    .menu-btn span::after {
+    /* 三本線アイコンの作成 */
+    .menu-btn span, .menu-btn span::before, .menu-btn span::after {
         content: '';
         display: block;
         height: 2px;
@@ -196,65 +121,21 @@ ul {
         border-radius: 2px;
         background-color: #fff;
         position: absolute;
-        transition: all 0.3s; /* アニメーション用 */
+        transition: all 0.3s;
     }
-
-    /* 上下の線 */
     .menu-btn span::before { bottom: 8px; }
     .menu-btn span::after { top: 8px; }
 
-    /* スマホでもチェックボックス（四角）は見せなくてOK */
-    #menu-btn-check {
-        display: none;
-    }
-
-    /* 三本線ボタンのほうだけを表示する */
-    .menu-btn {
-        display: flex; /* ここで初めてボタンが出る */
-        /* ...その他のボタンの装飾... */
-    }
-}
-
-    /* チェックが入った時（クリック時）のアイコン変化（×印） */
+    /* ×印への変化 */
     #menu-btn-check:checked ~ .menu-btn span { background-color: rgba(255, 255, 255, 0); }
     #menu-btn-check:checked ~ .menu-btn span::before { bottom: 0; transform: rotate(45deg); }
     #menu-btn-check:checked ~ .menu-btn span::after { top: 0; transform: rotate(-45deg); }
 
-    /* メニューを画面全体に広げる（初期状態は右に隠す） */
+    /* メニュー本体の設定 */
     .nav-menu {
         position: fixed;
         top: 0;
-        right: -100%; /* 画面の外に隠す */
-        width: 80%; /* メニューの幅 */
+        right: -100%; /* 初期状態は隠す */
+        width: 80%;
         height: 100vh;
-        background-color: #fff;
-        transition: all 0.4s;
-        z-index: 90;
-        padding-top: 80px;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-    }
-
-    /* チェックが入ったらメニューをスライドして表示 */
-    #menu-btn-check:checked ~ .nav-menu {
-        right: 0;
-    }
-
-    /* メニュー内のリンクを縦並びにする */
-    .nav-menu ul {
-        flex-direction: column;
-        padding: 20px;
-        gap: 0;
-    }
-
-    .nav-menu ul li a {
-        display: block;
-        padding: 15px;
-        border-bottom: 1px solid #eee;
-    }
-
-    .contact-btn {
-        margin-top: 20px;
-        text-align: center;
-    }
-}
-
+        background-
