@@ -1,6 +1,10 @@
 /* ======================================================= */
 /* 1. 基本リセットとPC/スマホ共通のベーススタイル */
 /* ======================================================= */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
     color: #333;
@@ -139,3 +143,4 @@ ul { list-style: none; padding: 0; margin: 0; }
         width: 80%;
         height: 100vh;
         background-
+
