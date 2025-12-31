@@ -78,6 +78,16 @@ ul {
     display: none;
 }
 
+/* チェックボックス本体を画面から完全に消す */
+#menu-btn-check {
+    display: none !important;
+}
+
+/* ハンバーガーの三本線ボタンもPCでは消す */
+.menu-btn {
+    display: none;
+}
+
 /* ======================================================= */
 /* 3. メインコンテンツのベーススタイル */
 /* ======================================================= */
@@ -193,6 +203,18 @@ ul {
     .menu-btn span::before { bottom: 8px; }
     .menu-btn span::after { top: 8px; }
 
+    /* スマホでもチェックボックス（四角）は見せなくてOK */
+    #menu-btn-check {
+        display: none;
+    }
+
+    /* 三本線ボタンのほうだけを表示する */
+    .menu-btn {
+        display: flex; /* ここで初めてボタンが出る */
+        /* ...その他のボタンの装飾... */
+    }
+}
+
     /* チェックが入った時（クリック時）のアイコン変化（×印） */
     #menu-btn-check:checked ~ .menu-btn span { background-color: rgba(255, 255, 255, 0); }
     #menu-btn-check:checked ~ .menu-btn span::before { bottom: 0; transform: rotate(45deg); }
@@ -235,3 +257,4 @@ ul {
         text-align: center;
     }
 }
+
