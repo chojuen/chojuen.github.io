@@ -40,11 +40,46 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 
 /* ヒーロー */
-.hero { text-align: center; padding: 140px 20px; background-color: #f7f7f7; }
-.hero h1 { font-size: 36px; color: #2e8b57; margin-bottom: 20px; }
-.cta-btn {
-    display: inline-block; background-color: #ff9800; color: #fff;
-    padding: 12px 40px; border-radius: 30px; font-weight: bold;
+.hero {
+    /* 画像の設定 */
+    background-image: url("unnamed.jpg"); /* ここを実際のファイル名に書き換えてください */
+    background-size: cover;      /* 枠いっぱいに広げる */
+    background-position: center; /* 画像の真ん中を表示 */
+    background-repeat: no-repeat;
+    
+    /* 高さの設定 */
+    height: 80vh; /* 画面の高さの80%分を表示 */
+    display: flex;
+    align-items: center;    /* 垂直方向の真ん中 */
+    justify-content: center; /* 水平方向の真ん中 */
+    text-align: center;
+    
+    /* ★文字を白くし、かつ読みやすくする工夫 */
+    color: #ffffff; /* 文字を白にする */
+    position: relative;
+    z-index: 1;
+}
+
+/* 画像の上に薄い黒い膜を張る（これで白い文字がハッキリ見えます） */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* 0.4は暗さの度合い。数字を大きくするとより暗くなります */
+    z-index: -1;
+}
+
+.hero h1 {
+    font-size: 2.5rem; /* 文字を少し大きく */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* 文字に影をつけてさらに読みやすく */
+}
+
+.hero p {
+    font-size: 1.2rem;
 }
 
 /* サービス & 料金プラン */
@@ -107,4 +142,5 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 
 .footer { text-align: center; padding: 20px 0; background-color: #333; color: #fff; }
+
 
