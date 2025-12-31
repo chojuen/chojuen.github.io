@@ -58,6 +58,14 @@ ul { list-style: none; padding: 0; margin: 0; }
     color: #ffffff; /* 文字を白にする */
     position: relative;
     z-index: 1;
+    padding: 0 20px; 
+    box-sizing: border-box;
+}
+
+/* 文字を囲むエリアを少しスリムにする */
+.hero-content {
+    max-width: 800px; /* パソコンで見た時に文字が広がりすぎないようにする */
+    width: 100%;
 }
 
 /* 画像の上に薄い黒い膜を張る（これで白い文字がハッキリ見えます） */
@@ -138,9 +146,21 @@ ul { list-style: none; padding: 0; margin: 0; }
     .nav-menu ul li a { display: block; padding: 15px; border-bottom: 1px solid #eee; }
 
     .service-list, .case-list, .plant-grid { flex-direction: column; }
-    .hero h1 { font-size: 28px; }
-}
+    /* ヒーローの文字サイズと位置を微調整 */
+    .hero {
+        height: 60vh; /* スマホでは少し高さを抑えるとバランスが良いです */
+    }
+    .hero h1 {
+        font-size: 22px; /* スマホに合わせて少し小さく */
+        line-height: 1.4;
+        margin-bottom: 15px;
+    }
+    .hero p {
+        font-size: 14px; /* スマホに合わせて少し小さく */
+        padding: 0 10px; /* 説明文が長くなった時に端に寄らないように */
+    }
 
 .footer { text-align: center; padding: 20px 0; background-color: #333; color: #fff; }
+
 
 
