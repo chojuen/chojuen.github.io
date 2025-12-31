@@ -39,17 +39,17 @@ ul { list-style: none; padding: 0; margin: 0; }
     transform: translateX(-50%); width: 60px; height: 3px; background: #2e8b57;
 }
 
+/* ヒーローセクション */
 .hero {
-    background-image: url("unnamed.jpg");
+    background-image: url("unnamed.jpg"); /* 画像ファイル名 */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 80vh;
     display: flex;
-    /* ↓中身を「縦」に並べる指示 */
     flex-direction: column;
-    align-items: center;    /* 左右の真ん中 */
-    justify-content: center; /* 上下の真ん中 */
+    align-items: center;
+    justify-content: center;
     text-align: center;
     color: #ffffff;
     position: relative;
@@ -58,34 +58,39 @@ ul { list-style: none; padding: 0; margin: 0; }
     box-sizing: border-box;
 }
 
-/* 文字の箱を調整 */
-.hero-content {
-    display: block; /* 縦に並ぶように */
-    width: 100%;
-}
-
-/* 画像の上に薄い黒い膜を張る（これで白い文字がハッキリ見えます） */
 .hero::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* 0.4は暗さの度合い。数字を大きくするとより暗くなります */
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
     z-index: -1;
 }
 
+.hero-content {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+}
+
 .hero h1 {
-    font-size: 2.8rem; /* PCでは少し大きめに */
-    margin: 0 0 20px 0; /* 下にだけ余白を作る */
+    font-size: 2.8rem;
+    margin: 0 0 20px 0;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     line-height: 1.3;
 }
 
+/* 「観葉植物のリース専門」の部分 */
+.hero-sub {
+    display: block;
+    font-size: 1.8rem;
+    margin-top: 15px;
+    font-weight: normal;
+}
+
 .hero p {
     font-size: 1.2rem;
-    margin: 0; /* 余計な余白を消す */
+    margin: 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 /* サービス & 料金プラン */
@@ -149,16 +154,23 @@ ul { list-style: none; padding: 0; margin: 0; }
         height: 60vh;
     }
     .hero h1 {
-        font-size: 24px; /* スマホで1行または2行に収まるサイズ */
-        margin-bottom: 15px;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    .hero-sub {
+        font-size: 16px;
+        margin-top: 10px;
     }
     .hero p {
-        font-size: 15px;
+        font-size: 14px;
         line-height: 1.6;
     }
+}
 
-.footer { text-align: center; padding: 20px 0; background-color: #333; color: #fff; }
-
-
-
-
+/* フッター */
+.footer { 
+    text-align: center; 
+    padding: 40px 20px; 
+    background-color: #333; 
+    color: #fff; 
+}
