@@ -143,11 +143,29 @@ ul { list-style: none; padding: 0; margin: 0; }
 /* 3. スマホ対応 */
 /* ======================================================= */
 @media screen and (max-width: 600px) {
+    /* ヘッダー全体の横の余白を最小限にする */
+    .header-inner {
+        padding: 0 5px; /* 左右を5pxまで詰めました */
+    }
+
+    /* ロゴを左端ギリギリまで寄せる */
+    .logo {
+        margin-left: -10px; /* ネガティブマージンでさらに左へ押し出します */
+    }
+
+    .logo img {
+        height: 45px;
+        /* もし画像自体に余白がある場合は、以下の1行も有効です */
+        object-position: left; 
+    }
+
     .menu-btn {
-        display: flex !important; position: fixed; top: 20px; right: 20px;
+        display: flex !important; position: fixed; top: 15px; right: 15px;
         z-index: 1100; background-color: #2e8b57; width: 40px; height: 40px;
         justify-content: center; align-items: center; border-radius: 5px;
     }
+    
+    /* --- 以下のメニューボタン等の記述は変更なし --- */
     .menu-btn span, .menu-btn span::before, .menu-btn span::after {
         content: ''; display: block; height: 2px; width: 25px;
         background-color: #fff; position: absolute; transition: 0.3s;
@@ -168,37 +186,10 @@ ul { list-style: none; padding: 0; margin: 0; }
 
     .service-list, .case-list, .plant-grid { flex-direction: column; }
     
-    .hero {
-        height: 60vh;
-    }
-    .hero h1 {
-        font-size: 26px !important; /* スマホメイン */
-    }
-    .hero h1 .hero-sub {
-        font-size: 16px !important; /* スマホサブ（はっきり小さく） */
-        margin-top: 8px;
-    }
-    .hero p {
-        font-size: 14px;
-        line-height: 1.6;
-    }
-}
-
-/* 追加：ヘッダーの内側の余白を左だけ詰める */
-    .header-inner {
-        padding: 0 10px; /* 左右20pxだったのを10pxに縮小 */
-    }
-
-    .logo {
-        margin-left: -5px; /* さらに微調整で左に寄せたい場合 */
-    }
-
-/* フッター */
-.footer { 
-    text-align: center; 
-    padding: 40px 20px; 
-    background-color: #333; 
-    color: #fff; 
+    .hero { height: 60vh; }
+    .hero h1 { font-size: 26px !important; }
+    .hero h1 .hero-sub { font-size: 16px !important; margin-top: 8px; }
+    .hero p { font-size: 14px; line-height: 1.6; }
 }
 
 
