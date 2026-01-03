@@ -143,20 +143,23 @@ ul { list-style: none; padding: 0; margin: 0; }
 /* 3. スマホ対応 */
 /* ======================================================= */
 @media screen and (max-width: 600px) {
-    /* ヘッダー全体の横の余白を最小限にする */
+   /* ヘッダーの中身の配置を左寄せに固定 */
     .header-inner {
-        padding: 0 5px; /* 左右を5pxまで詰めました */
+        padding: 0 10px;       /* 適度な余白に調整（0でもOK） */
+        display: block;        /* flexを解除するか、justify-contentを上書き */
+        text-align: left;      /* 中身を左寄せに */
     }
 
-    /* ロゴを左端ギリギリまで寄せる */
+    /* ロゴのコンテナ */
     .logo {
-        margin-left: -10px; /* ネガティブマージンでさらに左へ押し出します */
+        display: inline-block; /* 必要な分だけ幅を取るように変更 */
+        margin-left: 0;        /* マイナスマージンは削除 */
+        padding: 5px 0;
     }
 
     .logo img {
         height: 45px;
-        /* もし画像自体に余白がある場合は、以下の1行も有効です */
-        object-position: left; 
+        display: block;        /* 画像下の隙間防止 */
     }
 
     .menu-btn {
@@ -191,6 +194,7 @@ ul { list-style: none; padding: 0; margin: 0; }
     .hero h1 .hero-sub { font-size: 16px !important; margin-top: 8px; }
     .hero p { font-size: 14px; line-height: 1.6; }
 }
+
 
 
 
