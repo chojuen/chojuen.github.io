@@ -143,6 +143,12 @@ ul { list-style: none; padding: 0; margin: 0; }
 /* 3. スマホ対応 */
 /* ======================================================= */
 @media screen and (max-width: 600px) {
+
+/* 1. ヘッダー自体の上下余白を減らす */
+    .header {
+        padding: 5px 0 !important; /* 15pxから5pxに短縮 */
+    }
+    
    /* ヘッダーの中身の配置を左寄せに固定 */
     .header-inner {
         padding: 0 10px;       /* 適度な余白に調整（0でもOK） */
@@ -151,12 +157,12 @@ ul { list-style: none; padding: 0; margin: 0; }
     }
 
     /* ロゴのコンテナ */
-    .logo {
-        display: inline-block; /* 必要な分だけ幅を取るように変更 */
-        margin-left: 0;        /* マイナスマージンは削除 */
-        padding: 5px 0;
+   .logo {
+        padding: 0 !important;   /* 上下の5pxを0にする */
+        display: flex !important; 
+        align-items: center;
     }
-
+    
     .logo img {
         height: 45px;
         display: block;        /* 画像下の隙間防止 */
@@ -194,6 +200,7 @@ ul { list-style: none; padding: 0; margin: 0; }
     .hero h1 .hero-sub { font-size: 16px !important; margin-top: 8px; }
     .hero p { font-size: 14px; line-height: 1.6; }
 }
+
 
 
 
