@@ -19,7 +19,16 @@ ul { list-style: none; padding: 0; margin: 0; }
     padding: 15px 0; position: sticky; top: 0; z-index: 1000;
 }
 .header-inner { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-size: 24px; font-weight: bold; color: #2e8b57; }
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* ロゴの高さ（お好みで調整してください） */
+    width: auto;  /* 横幅は自動計算 */
+    display: block;
+}
 .nav-menu ul { display: flex; gap: 25px; }
 .nav-menu a { font-size: 15px; transition: color 0.3s; }
 .nav-menu a:hover { color: #4CAF50; }
@@ -173,4 +182,5 @@ ul { list-style: none; padding: 0; margin: 0; }
     background-color: #333; 
     color: #fff; 
 }
+
 
