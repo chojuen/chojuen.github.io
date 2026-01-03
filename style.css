@@ -184,6 +184,15 @@ ul { list-style: none; padding: 0; margin: 0; }
     }
 }
 
+/* 追加：ヘッダーの内側の余白を左だけ詰める */
+    .header-inner {
+        padding: 0 10px; /* 左右20pxだったのを10pxに縮小 */
+    }
+
+    .logo {
+        margin-left: -5px; /* さらに微調整で左に寄せたい場合 */
+    }
+
 /* フッター */
 .footer { 
     text-align: center; 
@@ -191,6 +200,7 @@ ul { list-style: none; padding: 0; margin: 0; }
     background-color: #333; 
     color: #fff; 
 }
+
 
 
 
