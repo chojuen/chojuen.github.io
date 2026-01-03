@@ -139,34 +139,42 @@ ul { list-style: none; padding: 0; margin: 0; }
     .header {
         padding: 10px 0 !important;
     }
-    
+
+    @media screen and (max-width: 600px) {
+    /* 1. ヘッダーの中身を整える */
     .header-inner {
         padding: 0 15px;
-        display: flex !important;      /* flexを維持 */
-        justify-content: flex-start;  /* 左寄せにする */
+        display: flex !important;
+        justify-content: flex-start; /* 左寄せを強制 */
+        align-items: center;
         text-align: left;
     }
 
+    /* 2. ロゴを囲むリンクの範囲を「画像サイズ」に限定する */
     .logo {
+        display: inline-flex !important; /* 横幅いっぱいに広がらないように変更 */
+        width: auto !important;          /* 幅を自動（画像サイズ）にする */
+        margin-right: auto;              /* 右側に余白を押しやって左寄せを維持 */
         padding: 0 !important;
-        margin-right: auto;           /* 右側に余白を作り、ロゴ自体は左に配置 */
-    }
-    
-    .logo img {
-        height: 45px;
     }
 
-    .menu-btn {
-        display: flex !important; 
-        position: absolute; /* fixedから変更（ヘッダー内に収めるため） */
-        top: 50%;
-        right: 15px;
-        transform: translateY(-50%);
-        z-index: 1100; 
-        background-color: #2e8b57; 
-        width: 35px; height: 35px;
-        justify-content: center; align-items: center; border-radius: 5px;
+    /* 3. 画像自体の設定 */
+    .logo img {
+        height: 45px;
+        width: auto;
+        display: block;
     }
+
+    /* ハンバーガーメニューの位置調整 */
+    .menu-btn {
+        display: flex !important;
+        position: relative; /* fixedやabsoluteより、flex内配置の方がズレにくい */
+        right: 0;
+        top: 0;
+        transform: none;
+        margin-left: 15px;
+    }
+}
     
     .menu-btn span, .menu-btn span::before, .menu-btn span::after {
         content: ''; display: block; height: 2px; width: 20px;
@@ -205,3 +213,4 @@ ul { list-style: none; padding: 0; margin: 0; }
     margin: 0;
     font-size: 14px;
 }
+
