@@ -19,25 +19,19 @@ ul { list-style: none; padding: 0; margin: 0; }
     padding: 15px 0; position: sticky; top: 0; z-index: 1000;
 }
 .header-inner { display: flex; justify-content: space-between; align-items: center; }
-/* ロゴ部分の修正 */
+
 .logo {
     display: flex;
     align-items: center;
-    padding: 5px 0; /* 上下に少し余白を作る */
+    padding: 5px 0;
 }
 
 .logo img {
-    height: 80px;   /* ロゴの高さを指定（ここをお好みで調整してください） */
-    width: auto;    /* 横幅は高さに合わせて自動調整 */
+    height: 80px;
+    width: auto;
     display: block;
 }
 
-/* スマホの時は少し小さくする設定（任意） */
-@media screen and (max-width: 600px) {
-    .logo img {
-        height: 45px; /* スマホで見やすいサイズ */
-    }
-}
 .nav-menu ul { display: flex; gap: 25px; }
 .nav-menu a { font-size: 15px; transition: color 0.3s; }
 .nav-menu a:hover { color: #4CAF50; }
@@ -59,7 +53,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 
 /* ヒーローセクション */
 .hero {
-    background-image: url("unnamed.jpg"); /* 画像ファイル名 */
+    background-image: url("unnamed.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -91,18 +85,17 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 
 .hero h1 {
-    font-size: 3.5rem !important; /* メインの文字をさらに大きく */
+    font-size: 3.5rem !important;
     margin: 0 0 10px 0;
     line-height: 1.2;
 }
 
-/* 「観葉植物のリース専門」の部分 */
 .hero h1 .hero-sub {
     display: block;
-    font-size: 1.5rem !important; /* サブの文字をメインの半分以下に */
-    font-weight: normal;         /* 文字を細くして差をつける */
+    font-size: 1.5rem !important;
+    font-weight: normal;
     margin-top: 10px;
-    color: #f0f0f0;             /* 少しだけ色を薄くして主役を引き立てる */
+    color: #f0f0f0;
 }
 
 .hero p {
@@ -140,50 +133,47 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 
 /* ======================================================= */
-/* 3. スマホ対応 */
+/* 3. スマホ対応 (max-width: 600px) */
 /* ======================================================= */
 @media screen and (max-width: 600px) {
-
-/* 1. ヘッダー自体の上下余白を減らす */
     .header {
-        padding: 5px 0 !important; /* 15pxから5pxに短縮 */
+        padding: 10px 0 !important;
     }
     
-   /* ヘッダーの中身の配置を左寄せに固定 */
     .header-inner {
-        padding: 0 10px;       /* 適度な余白に調整（0でもOK） */
-        display: block;        /* flexを解除するか、justify-contentを上書き */
-        text-align: left;      /* 中身を左寄せに */
+        padding: 0 15px;
+        display: flex !important;      /* flexを維持 */
+        justify-content: flex-start;  /* 左寄せにする */
+        text-align: left;
     }
 
-    /* ロゴのコンテナ */
-   .logo {
-        padding: 0 !important;   /* 上下の5pxを0にする */
-        display: flex !important; 
-        align-items: center;
+    .logo {
+        padding: 0 !important;
+        margin-right: auto;           /* 右側に余白を作り、ロゴ自体は左に配置 */
     }
     
     .logo img {
         height: 45px;
-        display: block;        /* 画像下の隙間防止 */
     }
 
     .menu-btn {
-        display: flex !important; position: fixed; top: 15px; right: 15px;
-        z-index: 1100; background-color: #2e8b57; width: 40px; height: 40px;
+        display: flex !important; 
+        position: absolute; /* fixedから変更（ヘッダー内に収めるため） */
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        z-index: 1100; 
+        background-color: #2e8b57; 
+        width: 35px; height: 35px;
         justify-content: center; align-items: center; border-radius: 5px;
     }
     
-    /* --- 以下のメニューボタン等の記述は変更なし --- */
     .menu-btn span, .menu-btn span::before, .menu-btn span::after {
-        content: ''; display: block; height: 2px; width: 25px;
+        content: ''; display: block; height: 2px; width: 20px;
         background-color: #fff; position: absolute; transition: 0.3s;
     }
-    .menu-btn span::before { bottom: 8px; }
-    .menu-btn span::after { top: 8px; }
-    #menu-btn-check:checked ~ .menu-btn span { background: none; }
-    #menu-btn-check:checked ~ .menu-btn span::before { bottom: 0; transform: rotate(45deg); }
-    #menu-btn-check:checked ~ .menu-btn span::after { top: 0; transform: rotate(-45deg); }
+    .menu-btn span::before { bottom: 6px; }
+    .menu-btn span::after { top: 6px; }
 
     .nav-menu {
         position: fixed; top: 0; right: -100%; width: 80%; height: 100vh;
@@ -201,11 +191,17 @@ ul { list-style: none; padding: 0; margin: 0; }
     .hero p { font-size: 14px; line-height: 1.6; }
 }
 
+/* ======================================================= */
+/* 4. フッター */
+/* ======================================================= */
+.footer {
+    background-color: #333; /* 背景色：黒 */
+    color: #fff;            /* 文字色：白 */
+    padding: 40px 0;        /* 上下の余白 */
+    text-align: center;      /* 文字中央揃え */
+}
 
-
-
-
-
-
-
-
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
